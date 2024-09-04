@@ -1,0 +1,61 @@
+﻿<Application x:Class="Wpf_1145_2024.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Wpf_1145_2024"
+             xmlns:model="clr-namespace:Wpf_1145_2024.Model.Student"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type model:StudentAttributeBool}">
+            <StackPanel>
+                <Label Content="Наименование"/>
+                <TextBox Text="{Binding Title}"/>
+                <Label Content="Значение"/>
+                <CheckBox IsChecked="{Binding Value}"/>
+                <Button Content="Сохранить"
+                        Command="{Binding Save, 
+                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}"
+                        />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type model:StudentAttributeFloat}">
+            <StackPanel>
+                <Label Content="Наименование"/>
+                <TextBox Text="{Binding Title}"/>
+                <Label Content="Значение"/>
+                <TextBox Text="{Binding Value}"/>
+                <Button Content="Сохранить"
+        Command="{Binding Save, 
+    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}"
+        />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type model:StudentAttributeRange}">
+            <StackPanel>
+                <Label Content="Наименование"/>
+                <TextBox Text="{Binding Title}"/>
+                <Label Content="Минимум"/>
+                <TextBox Text="{Binding Min}"/>
+                <Label Content="Максимум"/>
+                <TextBox Text="{Binding Max}"/>
+                <Label Content="Значение"/>
+                <TextBox Text="{Binding Value}"/>
+                <Button Content="Сохранить"
+        Command="{Binding Save, 
+    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}"
+        />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type model:StudentAttributeString}">
+            <StackPanel>
+                <Label Content="Наименование"/>
+                <TextBox Text="{Binding Title}"/>
+                <Label Content="Значение"/>
+                <TextBox Text="{Binding Value}"/>
+                <Button Content="Сохранить"
+        Command="{Binding Save, 
+    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}"
+        />
+            </StackPanel>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
