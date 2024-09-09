@@ -24,7 +24,7 @@
         <Button Command="{Binding DOIT}" Padding="15" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Выбрать!" Grid.Row="2"/>
 
         <StackPanel HorizontalAlignment="Center" MaxHeight="300" Grid.Row="3">
-            <ListBox ItemsSource="{Binding Result}"/>
+            <ListBox ItemsSource="{Binding Students}" DisplayMemberPath="FIO"/>
         </StackPanel>
     </Grid>
 </Page>

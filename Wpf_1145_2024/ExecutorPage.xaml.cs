@@ -20,14 +20,14 @@ using Wpf_1145_2024.MVVM;
 using task = Wpf_1145_2024.Model.Task;
 namespace Wpf_1145_2024
 {
-    
+
     /// <summary>
     /// Логика взаимодействия для ExecutorPage.xaml
     /// </summary>
     public partial class ExecutorPage : Page
     {
         public ObservableCollection<task.Task> Tasks { get; set; }
-        public ObservableCollection<Student> Students { get; set; }
+        public ObservableCollection<Student> Students { get; set; } = new();
         public task.Task SelectedTask { get; set; }
 
         public MVVMCommand DOIT { get; set; }
@@ -35,13 +35,26 @@ namespace Wpf_1145_2024
         {
             InitializeComponent();
             ViewTasks();
-            DOIT = new MVVMCommand(() => {
+            DOIT = new MVVMCommand(() =>
+            {
                 if (SelectedTask == null)
                     return;
 
                 var allstudents = DB.DataBase.GetInstance().GetStudents();
-
-
+                List<IEnumerable<Student>> array = new List<IEnumerable<Student>>();
+                foreach (var attr in SelectedTask.Attributes)
+                {
+                    var stud = allstudents.Where(s => s.Attributes.FirstOrDefault(s => s.Title == attr.Attribute.Title) != null);
+                    array.Add(stud);
+                }
+                var a = array.First();
+                foreach (var b in array)
+                {
+                    a = a.Intersect(b);
+                }
+                Students.Clear();
+                foreach (var b in a)
+                    Students.Add(b);
             });
             DataContext = this;
         }
