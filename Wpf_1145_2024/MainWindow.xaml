@@ -14,6 +14,7 @@
         <Menu>
             <MenuItem Header="Редактор студентов" Click="openEditor"/>
             <MenuItem Header="Редактор задач" Click="openTaskEditor"/>
+            <MenuItem Header="Выбор исполнителей" Click="openExecutor"/>
         </Menu>
         <Frame Content="{Binding CurrentPage}"  Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>

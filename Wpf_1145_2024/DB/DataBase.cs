@@ -60,6 +60,11 @@ namespace Wpf_1145_2024.DB
             students.Add(student);
         }
 
+        internal void Add(task.Task task)
+        {
+            tasks.Add(task);
+        }
+
         internal IEnumerable<Student> GetStudents()
             => students;
 

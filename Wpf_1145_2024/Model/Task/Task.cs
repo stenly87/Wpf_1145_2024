@@ -10,6 +10,6 @@ namespace Wpf_1145_2024.Model.Task
     {
         public string Title { get; set; }
 
-        public List<TaskAttribute> Attributes { get; set; }
+        public List<TaskAttribute> Attributes { get; set; } = new();
     }
 }

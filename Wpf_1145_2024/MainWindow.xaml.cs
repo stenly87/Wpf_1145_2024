@@ -56,5 +56,10 @@ namespace Wpf_1145_2024
         {
             CurrentPage = new NewTaskPage();
         }
+
+        private void openExecutor(object sender, RoutedEventArgs e)
+        {
+            CurrentPage = new ExecutorPage();
+        }
     }
 }

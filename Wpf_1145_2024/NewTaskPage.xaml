@@ -48,7 +48,7 @@
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel>
-                                                    <TextBlock Text="{Binding Attribute}"/>
+                                                    <TextBlock Text="{Binding Attribute, StringFormat=Требование: {0}}"/>
                                                     <TextBlock Text="{Binding Inaccuracy, StringFormat=Погрешность: {0}}"/>
                                                 </StackPanel>
                                             </DataTemplate>
