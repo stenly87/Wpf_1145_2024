@@ -6,7 +6,7 @@ namespace Wpf_1145_2024.Model.Student
     {
         public override float GetFloatValue()
         {
-            return 0f;
+            return (float)Math.Round(((uint)Value.GetHashCode()) / (double)uint.MaxValue, 3);
         }
 
         public override string ToString()

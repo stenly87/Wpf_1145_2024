@@ -6,7 +6,7 @@ namespace Wpf_1145_2024.Model.Student
     {
         public override float GetFloatValue()
         {
-            return 0f;
+            return Value ? 1 : 0;
         }
 
         public override void ReadJsonValue(ref Utf8JsonReader reader)

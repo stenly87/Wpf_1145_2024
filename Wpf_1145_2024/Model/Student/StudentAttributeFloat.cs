@@ -11,7 +11,7 @@ namespace Wpf_1145_2024.Model.Student
     {
         public override float GetFloatValue()
         {
-            return 0f;
+            return Value;
         }
 
         public override string ToString()
